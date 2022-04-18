@@ -1,7 +1,9 @@
 # What we want is a program that picks a random number, then displays that number on an HTML file
 
 import random
+import tkinter as tk
 
+champ = 0
 
 def write_HTML(numb):  # this just writes to the html file so OBS can see it.
     file = open("number.html", "w")
@@ -15,13 +17,23 @@ def write_HTML(numb):  # this just writes to the html file so OBS can see it.
 
 
 def random_champ():
+    global champ
     champ = random.randint(1, 55)  # a random int between 1-55
     return champ
 
+def do_this(): 
+    global champ, string                                # pull down the champion and  
+    champ = random_champ()                              # make a new random Champion
+    write_HTML(champ)                                   # push that to the HTML
+    string = "Your random Champion is: " + str(champ)   # the rest is updating the window
+    label['text'] = string
+    label.pack()
 
-# Let's first pick a random number. 1-55 because there is 55 champions in Paladins
-champ = random_champ()
-# Now lets put names to number
-# TO DO
-# Now lets write the number
-write_HTML(champ)
+
+window = tk.Tk() # makes a window with the size below
+window.geometry("300x50")
+greeting = tk.Button(text="Hello there!", command=lambda: do_this()) # makes a button, then adds text
+label = tk.Label(text="Press the button for a Random Champion")
+label.pack() # puts it all together and pops up a window
+greeting.pack()
+window.mainloop() 
