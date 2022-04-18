@@ -3,11 +3,11 @@ This program is ment to pick a random champion from the hit game Palidins, then 
 
 I'm not very clever with installing things, but all you need is the main.py file and run it once.
 
-OBS USE:
+<h2>OBS USE:</h2>
 To show the "Champion" on OBS, youll need to create a browser source. Choose local file, then select the HTML file that *should* be in the same as the main.py. Make sure to run main.py first to get the HTML file.
 After you add the HTML file, run main.py again to choose a new champion. The HTML file will refresh every 2 seconds to show the change. 
 
-HOW IT WORKS:
+<h2>HOW IT WORKS:</h2>
 when you run the python program, it'll thow a new random number into the HTML file. The HTML file is set to refresh every 2 seconds. 
 
 It's not the most elegant solution, but it works kinda sorta. 
